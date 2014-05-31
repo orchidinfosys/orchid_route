@@ -1,4 +1,4 @@
 orchid_route
 ============
 
-Orchid Mobile App for Van Sales Integration module with odoo (Openerp)
+Orchid Mobile App for Van Sales Integration module with odoo (Openerp) Version 7
