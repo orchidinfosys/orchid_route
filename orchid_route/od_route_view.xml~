@@ -1,0 +1,146 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data>
+
+
+        <record id="view_od_route_tree" model="ir.ui.view">
+            <field name="name">od.route.tree</field>
+            <field name="model">od.route</field>
+            <field name="arch" type="xml">
+                <tree string="Orchid Route">
+                    <field name="name"/>
+                    <field name="route_code"/>
+                    <field name="vehicle"/>
+                </tree>
+            </field>
+        </record>
+
+
+        <record id="view_od_route_form" model="ir.ui.view">
+            <field name="name">od.route.form</field>
+            <field name="model">od.route</field>
+            <field name="arch" type="xml">
+                <form string="Orchid Route" version="7.0">
+                <sheet>
+                <label for="route_code" class="oe_edit_only"/>
+                    <h1><field name="route_code"/></h1>
+                <label for="name" class="oe_edit_only"/>
+                    <h2><field name="name"/></h2>
+                <group>
+                    <group>
+<!--                        <field name="name"/>-->
+<!--                        <field name="route_code"/>-->
+                        <field name="warehouse_id"/>
+                        <field name="pricelist_id"/>
+                        <field name="vehicle"/>
+                         <field name="sale_person_id"/>
+                             <field name="helper_id"/>
+                     <field name="driver_id"/>
+                    <field name="assistant_id"/>
+                    </group>
+                    <group>
+
+
+                <label for="street" string="Address"/>
+                <div>
+                    <field name="area" placeholder="Area"/>
+                    <field name="address" placeholder="Address"/>
+                    <field name="city" placeholder="City"/>
+                    <field name="state_id" placeholder="State"/>
+                    <field name="country_id" placeholder="Country"/>
+                </div>
+                    </group>  
+
+<group string="Users"> 
+                    <field name="pwd_user" />
+                    <field name="pwd_manager"/>
+                    <field name="pwd_admin"/>
+                    <field name="check_qty"/>
+<!--                    <field name="show_pwd"/>-->
+</group>
+<group>
+</group>
+
+      
+            <group string="Device Details">
+                    <field name="device_id" on_change="onchange_device_id(device_id)"/>
+                    <field name="gmail_id"/>
+                    <field name="gmail_pwd" password="True"/>
+                    <field name="sim_num"/>
+                    <field name="geo_code"/>
+                    <field name="server_cont_interval"/>
+            </group>                
+      <group string="Document Control">
+                    <field name="invoice_no"/>
+                    <field name="grv_no"/>
+                    <field name="transfer_no"/>
+                    <field name="receipt_no"/>
+                    <field name="so_num"/>
+                    <field name="mr_num"/>
+
+            </group>  
+
+                 </group>
+          <group string="Customers">
+            <field name="customer_ids" nolabel="1">
+                <tree>
+                    <field name="name"/>
+                    <field name="phone"/>
+                </tree>
+            </field>
+          </group>
+    
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+
+        <record id="action_orchid_route_form" model="ir.actions.act_window">
+            <field name="name">Orchid Route</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">od.route</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">tree,form</field>
+            <field name="help" type="html">
+              <p class="oe_view_nocontent_create">
+                Click to define a new Routes.
+              </p>
+            </field>
+        </record>
+
+<menuitem id="orchid_route_config_main" name="Route Settings" action="action_orchid_route_form" parent="base.menu_base_config" sequence="36"/>
+
+
+<!--For Creating a table only-->
+
+        <record id="action_od_mob_invd_form" model="ir.actions.act_window">
+            <field name="name">OD mobile invoiceD</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">od.mob.invd</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">tree,form</field>
+            <field name="help" type="html">
+              <p class="oe_view_nocontent_create">
+                Click to define a od_Mob_InvD.
+              </p>
+            </field>
+        </record>
+
+        <record id="action_od_mob_invh_form" model="ir.actions.act_window">
+            <field name="name">odMobInvH</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">od.mob.invh</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">tree,form</field>
+            <field name="help" type="html">
+              <p class="oe_view_nocontent_create">
+                Click to define a od.Mob.InvH.
+              </p>
+            </field>
+        </record>
+
+
+
+    </data>
+</openerp>
